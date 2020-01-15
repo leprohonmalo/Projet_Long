@@ -1,0 +1,29 @@
+integrator      = cg    ; algorithme de minimisation utilise
+nsteps          = 150  ; nombre de pas de minimisation
+nstxout         = 100   ; ecriture des coordonnees a chaque pas
+ns_type         = grid  ; utilisation d'une grille pour optimiser
+                        ; le calcul
+;
+; non bonded stuff
+;
+nstlist         =  10  ; frequence de mise a jour de la liste des voisins
+                       ; ici tous les 10 pas
+coulombtype     = PME  ; algorithme de calcul des interactions electrostatiques
+                       ; Particle Mesh Ewald (PME)
+rlist           = 1.0  ; si d < rlist ; calcul tous les pas des interactions non liees
+rcoulomb        = 1  ; cutoff pour les interactions de Coulomb
+rvdw            = 1  ; cutoff pour les interactions de van der Waals
+fourierspacing  = 0.12 ; parametre PME
+pme_order       = 4    ; parametre PME
+
+;
+; Energy minimizing stuff
+;
+emtol           = 0.1            ; critere de convergence
+                       ; force maximale exercee sur un atome en kJ/mol/nm
+emstep          = 0.001          ; pas pour commencer la minimisation (=1/10 angstrom)
+
+;dihedral restraints
+;dihre     = yes
+;dihre_fc  = 300
+;dihre_tau = 0.0

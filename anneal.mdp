@@ -1,0 +1,51 @@
+constraints         =  h-bonds ; contraintes sur les longueur de liaison
+                                 ; rappel constraints != restraints
+integrator          =  md        ; algorithme utilise : dynamique moleculaire
+tinit               =  0.0       ; temps de depart = 0 ps   
+dt                  =  0.002     ; pas d'integration en ps
+                                 ; valeur liee a "constraints = all-bonds"
+nsteps              =  5000;000000 ; total 10 ps
+nstcomm             =  1         ; retrait du mouvement du centre de masse du systeme
+nstxout             =  500000    ; freq d'ecriture des positions des atomes dans le .trr
+nstvout             =  500000    ; freq d'ecriture des vitesses des atomes dans le .trr
+nstfout             =  0         ; freq d'ecriture des forces (ici jamais)
+nstxtcout           = 10000      ; freq d'ecriture des positions des atomes dans le .xtc 
+xtc_precision       =  5000      ; niveau de precision pour l'ecriture dans les .xtc
+nstlog              =  10000     ; freq d'ecriture dans le .log
+nstenergy           =  10000    ; freq d'ecriture des energies dans le .edr
+; non bonded stuff
+cutoff-scheme   = Verlet
+nstlist                =  10     ; voir minimisation 2
+coulombtype            = PME
+rlist                  = 1.0
+rcoulomb               = 1.0
+rvdw                   = 1.0
+fourierspacing         = 0.12
+pme_order              = 4
+; Temperature coupling is on in 2 groups
+Tcoupl              =  Berendsen          ; algo complage a la temperature
+tc-grps             = System ; Protein Non-Protein    ; (SOL_CL) groupes pour les thermostats
+tau_t               =  0.1  ;    0.1       ; temps de couplage a la temperature (en ps)
+ref_t               =  300  ;    300       ; temperature de reference 
+                                          ; pour chaque groupe (en K)
+; Energy monitoring
+;energygrps          =  Protein Non-Protein   ; (SOL CL) groupes pour les calculs d'energies
+
+; Pressure coupling is on
+pcoupl		        = Parrinello-Rahman	    ; Pressure coupling on in NPT
+pcoupltype	        = isotropic	            ; uniform scaling of box vectors
+tau_p		        = 2.0		            ; time constant, in ps
+ref_p		        = 1.0		            ; reference pressure, in bar
+compressibility     = 4.5e-5	            ; isothermal compressibility of water, bar^-1
+
+;gen_vel                  = yes
+;gen_temp                 = 10.0
+;gen_seed                 = -1
+
+; annealing part
+annealing = single ; single sequence of points for each T-coupling group 
+annealing-npoints = 3 ; N of points of heating
+annealing-temp  = 0    200     500  ; temperature to have at each point
+annealing-time  = 0      5      10  ; time points (in ps)
+
+

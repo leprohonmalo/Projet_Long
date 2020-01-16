@@ -76,7 +76,7 @@ is not working on these peptids on current program version.
                                 Initial weight for phi and psi angles.
 
 
-## Command line exemple:
+## Command line example:
 
 ./toto.py ../data/exemple/1awj.pdb ../data/exemple/1shg.pir ~/toto/ --dist_cons 200 --angles_cons 50
 

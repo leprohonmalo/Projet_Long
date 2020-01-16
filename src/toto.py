@@ -12,17 +12,24 @@
 #gromacs-2016.4
 #mkdssp 3.0
 
-#To Do when finished:
+#To Do:
+#Design error to correct, currently pos_template in align_dict might not
+#corresond to position in template pdb if first position isn't 1. This will
+#lead in a missassignment of restraints when converting from template position
+#to query position.  
+#test on pdbmmCIF to see if it works.
+#anneling problem to resolve.
+#box_size problem is not be totally resolved (go with max dimension of
+#first_structure for each dimension of the box as box size).
+#rewrite homogeneous variable names, factorize some code, improve script 
+#quality.
+#maybe try dssp with biopython (looks a bit too complex to be interesting).
+#remove tmp file after execution.
+#management of pdb with several chains or with water and other molecule.
+#advanced error management.
 #help to finish
 #doc and com
-#test on pdbmmCIF
-#anneling problem with box_size may not be totally resolved
-#rewrite homogeneous variable names, factorize some code, improve script quality
-#maybe try dssp with biopython (looks a bit too complex to be interesting)
-#remove tmp file after execution
-#management of pdb with several chains or with water and other molecule
-#advanced error management
-#gmx restraints:
+
 #http://manual.gromacs.org/documentation/2019/reference-manual/functions/restraints.html
 
 import os

@@ -14,8 +14,8 @@ is not working on these peptids on current program version.
 
 ## Program help
 
-usage: toto.py [-h] [--dist_cons DIST_CONS] [--angles_cons ANGLES_CONS]
-               pdb pir output_dir
+        usage: toto.py [-h] [--dist_cons DIST_CONS] [--angles_cons ANGLES_CONS]
+                    pdb pir output_dir
 
         This program try to predict the structure of a query protein from the
         structure of an homologous protein. The query start with a linear
@@ -63,17 +63,17 @@ usage: toto.py [-h] [--dist_cons DIST_CONS] [--angles_cons ANGLES_CONS]
         version.
         
 
-positional arguments:
-  pdb                   Path to a pdb file of template protein.
-  pir                   Path to a pir file containing sequence of query and aligned sequences of query and template.
-  output_dir            Path to the output directory for output files.
+        positional arguments:
+        pdb                   Path to a pdb file of template protein.
+        pir                   Path to a pir file containing sequence of query and aligned sequences of query and template.
+        output_dir            Path to the output directory for output files.
 
-optional arguments:
-  -h, --help            show this help message and exit
-  --dist_cons DIST_CONS
-                        Initial weight for distance.
-  --angles_cons ANGLES_CONS
-                        Initial weight for phi and psi angles.
+        optional arguments:
+        -h, --help            show this help message and exit
+        --dist_cons DIST_CONS
+                                Initial weight for distance.
+        --angles_cons ANGLES_CONS
+                                Initial weight for phi and psi angles.
 
 
 ## Command line exemple:
